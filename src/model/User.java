@@ -1,7 +1,6 @@
 package model;
-
+//calendaro_dos_signos
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author Bruno Gressler da Silveira
@@ -51,84 +50,85 @@ public class User {
        
                 switch(month){
                     case 1:
-                        if(day >= 1 || day <= 21){
+                        if(day >= 1 && day <= 21){
                             stringAnswer = "capricornio";
                         }else{
                             stringAnswer = "Aquario";
                         }
+                        
                         break;
                     case 2:
-                        if(day >= 1 || day <= 18){
+                        if(day >= 1 && day <= 18){
                             stringAnswer = "Aquario";
                         }else{
                             stringAnswer = "Peixes";
                         }
                         break;
                     case 3:
-                        if(day >= 1 || day <= 19){
+                        if(day >= 1 && day <= 19){
                             stringAnswer = "Peixes";
                         }else{
                             stringAnswer = "Aries";
                         }
                         break;
                     case 4:
-                        if(day >= 1 || day <= 20){
+                        if(day >= 1 && day <= 20){
                             stringAnswer = "Aries";
                         }else{
                             stringAnswer = "Touro";
                         }
                         break;
                     case 5:
-                        if(day >= 1 || day <= 20){
+                        if(day >= 1 && day <= 20){
                             stringAnswer = "Touro";
                         }else{
                             stringAnswer = "Gêmeos";
                         }
                         break;
                     case 6:
-                        if(day >= 1 || day <= 20){
+                        if(day >= 1 && day <= 20){
                             stringAnswer = "Gêmeos";
                         }else{
                             stringAnswer = "Câncer";
                         }
                         break;                    
                     case 7:
-                        if(day >= 1 || day <= 20){
+                        if(day >= 1 && day <= 21){
                             stringAnswer = "Câncer";
                         }else{
                             stringAnswer = "Leão";
                         }
                         break;
                     case 8:
-                        if(day >= 1 || day <= 22){
+                        if(day >= 1 && day <= 22){
                             stringAnswer = "Leão";
                         }else{
                             stringAnswer = "Virgem";
                         }
                         break;
                     case 9:
-                        if(day >= 1 || day <= 22){
+                        if(day >= 1 && day <= 22){
                             stringAnswer = "Virgem";
                         }else{
                             stringAnswer = "Libra";
                         }
                         break;
                     case 10:
-                        if(day >= 1 || day <= 22){
+                        if(day >= 1 && day <= 22){
                             stringAnswer = "Libra";
                         }else{
                             stringAnswer = "Escorpião";
                         }
                         break;
                     case 11:
-                        if(day >= 1 || day <= 21){
+                        if(day >= 1 && day <= 21){
                             stringAnswer = "Escorpião";
                         }else{
                             stringAnswer = "Sargitário";
                         }
                         break;
                     case 12:
-                        if(day >= 1 || day <= 21){
+                        if(day >= 1 && day <= 21){
                             stringAnswer = "Sargitário";
                         }else{
                             stringAnswer = "Capricórnio";

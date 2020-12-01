@@ -1,12 +1,14 @@
-
 package view;
-
+//calendaro_dos_signos
 import javax.swing.JOptionPane;
 import model.User;
-
+import controller.ViewFinder;
+import java.awt.HeadlessException;
 /**
  *
- * @author USER
+ * @author Bruno Gressler da Silveira
+ * @version 1
+ * @since 22/11/2020
  */
 public class Main extends javax.swing.JFrame {
 
@@ -36,7 +38,7 @@ public class Main extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jLayeredPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Calendário dos Signos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 2, 18))); // NOI18N
+        jLayeredPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Calendário dos Signos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 3, 18))); // NOI18N
         jLayeredPane1.setForeground(new java.awt.Color(0, 153, 153));
 
         jLabelName.setText("Nome:");
@@ -77,7 +79,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabelName))
                 .addGap(18, 18, 18)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldName)
+                    .addComponent(jTextFieldName, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
                     .addComponent(jTextFieldYear, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextFieldMonth, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextFieldDay, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -92,15 +94,11 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabelDay))
+                    .addComponent(jLabelDay)
                     .addComponent(jTextFieldDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabelMonth))
+                    .addComponent(jLabelMonth)
                     .addComponent(jTextFieldMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -141,7 +139,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jButtonCalculate)
                 .addGap(40, 40, 40)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,18 +148,18 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCalculate)
                     .addComponent(jButton1))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLayeredPane1)
-                    .addComponent(jLayeredPane2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLayeredPane2)
+                    .addComponent(jLayeredPane1))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -183,16 +181,36 @@ public class Main extends javax.swing.JFrame {
 
     private void jButtonCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalculateActionPerformed
         User objUser = new User();
-        
-        objUser.setNome(jTextFieldName.getText());
-        objUser.setByteDay(Byte.parseByte(jTextFieldDay.getText()));
-        objUser.setByteMonth(Byte.parseByte(jTextFieldMonth.getText()));
-        objUser.setIntYear(Integer.parseInt(jTextFieldYear.getText()));
-        
-        if(objUser.getByteDay() <= 0 || objUser.getByteDay() >= 32 || objUser.getByteMonth() < 1 || objUser.getByteMonth() > 12 || objUser.getIntYear() < 1800 || objUser.getIntYear() > 3000){
-            JOptionPane.showMessageDialog(null, "Opção Inválida");
-        }else{
-            JOptionPane.showMessageDialog(null, objUser.toString());
+        ViewFinder objViewFinder = new ViewFinder();
+        try {
+             
+                objUser.setNome(jTextFieldName.getText());
+                objUser.setByteDay(Byte.parseByte(jTextFieldDay.getText()));
+                objUser.setByteMonth(Byte.parseByte(jTextFieldMonth.getText()));
+                objUser.setIntYear(Integer.parseInt(jTextFieldYear.getText()));
+
+                if(objUser.getByteDay() <= 0 || objUser.getByteDay() >= 32 || objUser.getByteMonth() < 1 || objUser.getByteMonth() > 12 || objUser.getIntYear() < 1800 || objUser.getIntYear() > 3000){
+                    JOptionPane.showMessageDialog(null, "Opção Inválida");
+                    
+                    objViewFinder.limparTela(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
+                    
+                    jTextFieldName.grabFocus();
+                }else{
+                    JOptionPane.showMessageDialog(null, objUser.toString());
+                    
+                    objViewFinder.limparTela(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
+                    
+                    jTextFieldName.grabFocus();
+                }
+
+            
+        } catch (HeadlessException | NumberFormatException erro) {
+            JOptionPane.showMessageDialog(null, "ERRO \n"
+                    + erro, "Erro", JOptionPane.ERROR_MESSAGE);
+        }finally{
+            objViewFinder.limparTela(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
+            
+            jTextFieldName.grabFocus();
         }
 
     }//GEN-LAST:event_jButtonCalculateActionPerformed

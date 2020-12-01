@@ -27,11 +27,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLayeredPane1" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLayeredPane2" max="32767" attributes="0"/>
+                  <Component id="jLayeredPane1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -58,7 +58,7 @@
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder justification="2" position="2" title="Calend&#xe1;rio dos Signos">
-              <Font PropertyName="font" name="Tahoma" size="18" style="2"/>
+              <Font PropertyName="font" name="Tahoma" size="18" style="3"/>
             </TitledBorder>
           </Border>
         </Property>
@@ -80,7 +80,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTextFieldName" max="32767" attributes="0"/>
+                      <Component id="jTextFieldName" pref="284" max="32767" attributes="0"/>
                       <Component id="jTextFieldYear" alignment="1" max="32767" attributes="0"/>
                       <Component id="jTextFieldMonth" alignment="1" max="32767" attributes="0"/>
                       <Component id="jTextFieldDay" alignment="1" max="32767" attributes="0"/>
@@ -99,18 +99,12 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="jLabelDay" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabelDay" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldDay" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="jLabelMonth" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabelMonth" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldMonth" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -197,7 +191,7 @@
                   <Component id="jButtonCalculate" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="71" max="-2" attributes="0"/>
-                  <EmptySpace pref="116" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -209,7 +203,7 @@
                       <Component id="jButtonCalculate" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
