@@ -9,7 +9,7 @@ import javax.swing.JTextField;
  */
 public class ViewFinder {
     
-    public void limparTela(JTextField name, JTextField day, JTextField month, JTextField year){
+    public void clear(JTextField name, JTextField day, JTextField month, JTextField year){
         
         name.setText("");
         day.setText("");

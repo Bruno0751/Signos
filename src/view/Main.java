@@ -189,16 +189,16 @@ public class Main extends javax.swing.JFrame {
                 objUser.setByteMonth(Byte.parseByte(jTextFieldMonth.getText()));
                 objUser.setIntYear(Integer.parseInt(jTextFieldYear.getText()));
 
-                if(objUser.getByteDay() <= 0 || objUser.getByteDay() >= 32 || objUser.getByteMonth() < 1 || objUser.getByteMonth() > 12 || objUser.getIntYear() < 1800 || objUser.getIntYear() > 3000){
+                if(objUser.getByteDay() <= 0 || objUser.getByteDay() >= 32 || objUser.getByteMonth() < 1 || objUser.getByteMonth() > 12 || objUser.getIntYear() < 1800 || objUser.getIntYear() > 3000 && objUser.getByteMonth() == 2 && objUser.getByteDay() < 1 || objUser.getByteDay() >= 29){
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
                     
-                    objViewFinder.limparTela(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
+                    objViewFinder.clear(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
                     
                     jTextFieldName.grabFocus();
                 }else{
                     JOptionPane.showMessageDialog(null, objUser.toString());
                     
-                    objViewFinder.limparTela(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
+                    objViewFinder.clear(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
                     
                     jTextFieldName.grabFocus();
                 }
@@ -208,7 +208,7 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "ERRO \n"
                     + erro, "Erro", JOptionPane.ERROR_MESSAGE);
         }finally{
-            objViewFinder.limparTela(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
+            objViewFinder.clear(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
             
             jTextFieldName.grabFocus();
         }
