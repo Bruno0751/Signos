@@ -190,6 +190,7 @@ public class Main extends javax.swing.JFrame {
                 objUser.setIntYear(Integer.parseInt(jTextFieldYear.getText()));
 
                 if(objUser.getByteDay() <= 0 || objUser.getByteDay() >= 32 || objUser.getByteMonth() < 1 || objUser.getByteMonth() > 12 || objUser.getIntYear() < 1800 || objUser.getIntYear() > 3000 && objUser.getByteMonth() == 2 && objUser.getByteDay() < 1 || objUser.getByteDay() >= 29){
+                        
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
                     
                     objViewFinder.clear(jTextFieldName, jTextFieldDay, jTextFieldMonth, jTextFieldYear);
